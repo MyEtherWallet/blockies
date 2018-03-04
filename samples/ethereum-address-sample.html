@@ -7,19 +7,35 @@
     height: 64px;
     background-size: cover;
     background-repeat: no-repeat;
-    border-radius: 50%;
+    border-radius: 20%;
     box-shadow: inset rgba(255, 255, 255, 0.6) 0 2px 2px, inset rgba(0, 0, 0, 0.3) 0 -2px 6px;
+}
+input[type=text] {
+    width: 100%;
+    padding: 2px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
 }
 </style>
 </head>
 <body>
     <div id="icon"></div>
-    <script src="blockies.js"></script>
+    <input id="address" type="text"></input>
+    <script src="../dist/blockies.js"></script>
     <script>
+        var defaultAddress = '0xfb6916095ca1df60bb79ce92ce3ea74c37c5d359';
 
-        var address = '0xfb6916095ca1df60bb79ce92ce3ea74c37c5d359';
+        var addressText = document.getElementById("address");
         var icon = document.getElementById('icon');
-        icon.style.backgroundImage = 'url(' + blockies.create({ seed:address ,size: 8,scale: 16}).toDataURL()+')'
 
+        addressText.value = defaultAddress;
+        addressText.addEventListener('input', addressChange);
+
+        function addressChange(){
+            var address = addressText.value || defaultAddress;
+            icon.style.backgroundImage = 'url(' + blockies.toDataUrl(address) + ')';
+        }
+
+        addressChange();
     </script>
 </body>
