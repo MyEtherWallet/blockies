@@ -3,9 +3,9 @@ Blockies
 
 A tiny library for generating blocky identicons.
 
-![Sample blockies image](sample.png "Blockies")
+![Sample blockies image](samples/sample.png "Blockies")
 
-[**Demo page**](http://download13.github.io/blockies/)
+[**Demo page**](http://htmlpreview.github.io/?https://github.com/101100/blockies/blob/fix-sample-page/samples/ethereum-address-sample.html)
 
 Use
 ---
